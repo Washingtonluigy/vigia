@@ -5,7 +5,6 @@ import {
   updateSiteConfig,
   getVideos,
   addVideo,
-  updateVideo,
   deleteVideo,
   getAllTestimonials,
   addTestimonial,

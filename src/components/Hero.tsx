@@ -6,7 +6,6 @@ import { getSiteConfig, getVideos, SiteConfig, Video } from '../services/adminSe
 export default function Hero() {
   const [config, setConfig] = useState<SiteConfig | null>(null);
   const [videos, setVideos] = useState<Video[]>([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadData = async () => {
@@ -19,8 +18,6 @@ export default function Hero() {
         setVideos(videosData.filter(v => v.is_active));
       } catch (error) {
         console.error('Erro ao carregar dados:', error);
-      } finally {
-        setLoading(false);
       }
     };
     loadData();

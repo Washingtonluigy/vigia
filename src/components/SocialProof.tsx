@@ -4,7 +4,6 @@ import { getTestimonials, Testimonial } from '../services/adminService';
 
 export default function SocialProof() {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadTestimonials = async () => {
@@ -13,8 +12,6 @@ export default function SocialProof() {
         setTestimonials(data);
       } catch (error) {
         console.error('Erro ao carregar depoimentos:', error);
-      } finally {
-        setLoading(false);
       }
     };
     loadTestimonials();
